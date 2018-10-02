@@ -1,0 +1,57 @@
+a = 1:1:10
+
+a =
+
+  Columns 1 through 7
+
+     1     2     3     4     5     6     7
+
+  Columns 8 through 10
+
+     8     9    10
+
+clc
+save(a)
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('save')" style="font-weight:bold">save</a>
+Argument must contain a character vector.
+} 
+matlab.internal.language.introspective.errorDocCallback('save')
+save('variable.mat',a)
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('save')" style="font-weight:bold">save</a>
+Argument must contain a character vector.
+} 
+a = 'peter needs MATLAB help!'
+
+a =
+
+peter needs MATLAB help!
+
+clc
+save('name.mat',a)
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('save')" style="font-weight:bold">save</a>
+'peter needs MATLAB help!' is not a valid
+variable name.
+} 
+save(a,'name.mat')
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('save')" style="font-weight:bold">save</a>
+'name.mat' is not a valid variable name.
+} 
+matlab.internal.language.introspective.errorDocCallback('save')
+p = rand(1,10);
+q = ones(10);
+save('pqfile.mat','p','q')
+clc
+a = 1:1:10
+
+a =
+
+  Columns 1 through 7
+
+     1     2     3     4     5     6     7
+
+  Columns 8 through 10
+
+     8     9    10
+
+clc
+save('variable.mat','a')
