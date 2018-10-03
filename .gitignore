@@ -111,6 +111,9 @@ target/
 # pyenv
 .python-version
 
+# any auto-generated .html files
+.html
+
 # celery beat schedule file
 celerybeat-schedule
 
