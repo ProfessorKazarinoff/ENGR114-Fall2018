@@ -1,0 +1,169 @@
+a = 'Peter'
+
+a =
+
+Peter
+
+a = 'Peter';
+clc
+fprintf('My printed string')
+My printed string
+a = 'My saved string'
+
+a =
+
+My saved string
+
+clc
+fprintf(a)
+My saved string
+b = 0.12
+
+b =
+
+    0.1200
+
+fprintf(b)
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fprintf')" style="font-weight:bold">fprintf</a>
+Invalid file identifier.  Use fopen to generate a valid file identifier.
+} 
+b
+
+b =
+
+    0.1200
+
+fprintf('The number is: 4.2%f and it is a float', b)
+The number is: 4.20.120000 and it is a floatfprintf('The number is: 4.2%f and it is a float', b)
+The number is: 4.20.120000 and it is a floatclc
+fprintf('The number is: %4.2f and it is a float', b)
+The number is: 0.12 and it is a float
+fprintf('The number is: %4.4f and it is a float', b)
+The number is: 0.1200 and it is a float
+fprintf('The number is: %4.10f and it is a float', b)
+The number is: 0.1200000000 and it is a floatclc
+fprintf('The number is: %1.10f and it is a float', b)
+The number is: 0.1200000000 and it is a floatclc
+fprintf('The number is: %1.2f and it is a float', b)
+The number is: 0.12 and it is a float
+fprintf('The number is: %5.2f and it is a float', b)
+The number is:  0.12 and it is a float
+fprintf('The number is: %15.2f and it is a float', b)
+The number is:            0.12 and it is a floatclc\
+ clc\
+     
+{Error: Expression or statement is incomplete or incorrect.
+} 
+clc
+a = pi
+
+a =
+
+    3.1416
+
+b = 2*pi
+
+b =
+
+    6.2832
+
+clc
+fprintf('pi is: %4.3f and 2pi is: %5.4f ',a,b)
+pi is: 3.142 and 2pi is: 6.2832 clc
+c = 'matlab'
+
+c =
+
+matlab
+
+fprintf('We are learning %s',c)
+We are learning matlab
+fprintf('We are learning %s',c)
+We are learning matlab
+
+fprintf('We are learning %s',c)
+We are learning matlab
+clc
+fprintf('We are learning \n',c)
+We are learning 
+ fprintf('We are learning \n \n MATLAB')
+We are learning 
+ 
+ MATLABfprintf('We are learning \n \n MATLAB')
+We are learning 
+ 
+ MATLABclc
+clc, clear, close all
+a = 1:1:10
+
+a =
+
+  Columns 1 through 8
+
+     1     2     3     4     5     6     7     8
+
+  Columns 9 through 10
+
+     9    10
+
+length(a)
+
+ans =
+
+    10
+
+a = ones(5)
+
+a =
+
+     1     1     1     1     1
+     1     1     1     1     1
+     1     1     1     1     1
+     1     1     1     1     1
+     1     1     1     1     1
+
+numel(a)
+
+ans =
+
+    25
+
+length(a)
+
+ans =
+
+     5
+
+[row, col]=length(a)
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('length')" style="font-weight:bold">length</a>
+Too many output arguments.
+} 
+size(a)
+
+ans =
+
+     5     5
+
+[row, col ] = size(a)
+
+row =
+
+     5
+
+
+col =
+
+     5
+
+a(a<0)
+
+ans =
+
+  0×1 empty <a href="matlab:helpPopup double" style="font-weight:bold">double</a> column vector
+
+a(a>10)
+
+ans =
+
+  0×1 empty <a href="matlab:helpPopup double" style="font-weight:bold">double</a> column vector
+
