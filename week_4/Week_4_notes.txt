@@ -1,0 +1,336 @@
+% in MATLAB there is a difference between mathematical expressions and
+% logical expressions
+2+2 %mathematical expression
+
+ans =
+
+     4
+
+a = [1 2 4]
+
+a =
+
+     1     2     4
+
+a(2)    %indexing expression
+
+ans =
+
+     2
+
+b = [1;4;5]
+
+b =
+
+     1
+     4
+     5
+
+a*b
+
+ans =
+
+    29
+
+% mathematical expression
+a = [1 2 3]
+
+a =
+
+     1     2     3
+
+a<2   %logical expression
+
+ans =
+
+  1×3 <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a> array
+
+   1   0   0
+
+a(1)
+
+ans =
+
+     1
+
+a<2   %logical expression
+
+ans =
+
+  1×3 <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a> array
+
+   1   0   0
+
+a == 3
+
+ans =
+
+  1×3 <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a> array
+
+   0   0   1
+
+a(a>2)     %indexing expression ( logical expression )
+
+ans =
+
+     3
+
+% the find function must have a logical expression as an input argument
+a = magic(5)
+
+a =
+
+    17    24     1     8    15
+    23     5     7    14    16
+     4     6    13    20    22
+    10    12    19    21     3
+    11    18    25     2     9
+
+find(a,13)
+
+ans =
+
+     1
+     2
+     3
+     4
+     5
+     6
+     7
+     8
+     9
+    10
+    11
+    12
+    13
+
+clc
+a
+
+a =
+
+    17    24     1     8    15
+    23     5     7    14    16
+     4     6    13    20    22
+    10    12    19    21     3
+    11    18    25     2     9
+
+find(a==13)
+
+ans =
+
+    13
+
+find(a==23)   %a==23 is a logical expression, will return the locations where the logical expression is true
+
+ans =
+
+     2
+
+% combine indexing with logical expression in a find() statement
+clc
+% combine indexing with logical expression in a find() statement
+a(find(a<10))        % logical expression a<10, returns locations where
+
+ans =
+
+     4
+     5
+     6
+     1
+     7
+     8
+     2
+     3
+     9
+
+% logical expression is true, indexing opperation a(), returns the values at
+% those locations
+find(a<10)    % returns locations where logical expression is true
+
+ans =
+
+     3
+     7
+     8
+    11
+    12
+    16
+    20
+    24
+    25
+
+clc
+B = [1 2 -9 4; 0 -1 -2 -3; -4 -5 -6 -7]
+
+B =
+
+     1     2    -9     4
+     0    -1    -2    -3
+    -4    -5    -6    -7
+
+B(:,1)
+
+ans =
+
+     1
+     0
+    -4
+
+B(:,1)==-4
+
+ans =
+
+  3×1 <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a> array
+
+   0
+   0
+   1
+
+clc
+B(:,1)
+
+ans =
+
+     1
+     0
+    -4
+
+find(B(:,1)==-4)
+
+ans =
+
+     3
+
+find(B(1,:)==-9)
+
+ans =
+
+     3
+
+B(find(B(:,1)==-4),find(B(1,:)==-9)
+ B(find(B(:,1)==-4),find(B(1,:)==-9)
+                                    
+{Error: Expression or statement is incorrect--possibly unbalanced (, {, or [.
+} 
+B(find(B(:,1)==-4),find(B(1,:)==-9))
+
+ans =
+
+    -6
+
+clc
+B(find(B(:,1)==-4),find(B(1,:)==-9))
+
+ans =
+
+    -6
+
+B = B'
+
+B =
+
+     1     0    -4
+     2    -1    -5
+    -9    -2    -6
+     4    -3    -7
+
+B(find(B(:,1)==-4),find(B(1,:)==-9))
+
+ans =
+
+     []
+
+B=B'
+
+B =
+
+     1     2    -9     4
+     0    -1    -2    -3
+    -4    -5    -6    -7
+
+B = [B(:,1) 1;5;0 B(:,2:4)]
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('horzcat')" style="font-weight:bold">horzcat</a>
+Dimensions of matrices being concatenated are not consistent.
+} 
+B
+
+B =
+
+     1     2    -9     4
+     0    -1    -2    -3
+    -4    -5    -6    -7
+
+[row col] = find(B==-4 or B==-9)
+ [row col] = find(B==-4 or B==-9)
+                        
+{Error: Unexpected MATLAB expression.
+} 
+[row col] = find(B==-4 | B==-9)
+
+row =
+
+     3
+     1
+
+
+col =
+
+     1
+     3
+
+B(row(1),col(2))
+
+ans =
+
+    -6
+
+B = B'
+
+B =
+
+     1     0    -4
+     2    -1    -5
+    -9    -2    -6
+     4    -3    -7
+
+[row col] = find(B==-4 | B==-9)
+
+row =
+
+     3
+     1
+
+
+col =
+
+     1
+     3
+
+B(row(1),col(2))
+
+ans =
+
+    -6
+
+randn(5)
+
+ans =
+
+  Columns 1 through 4
+
+    0.5377   -1.3077   -1.3499   -0.2050
+    1.8339   -0.4336    3.0349   -0.1241
+   -2.2588    0.3426    0.7254    1.4897
+    0.8622    3.5784   -0.0631    1.4090
+    0.3188    2.7694    0.7147    1.4172
+
+  Column 5
+
+    0.6715
+   -1.2075
+    0.7172
+    1.6302
+    0.4889
+
+clc
