@@ -1,17 +1,17 @@
-%% Read a potentiometer over serial
+%% Read a potentiometer on an Arduino over serial
 % P. Kazarinoff, 2018
 
 %%
 clc, clear, close all;
 
 %% Open the serial port
-Port = 'COM5'; % Port the Arduino is connected to
+Port = 'COM4'; % Port the Arduino is connected to
 delete(instrfindall); % deletes any connected ports
 a = serial(Port); % connect to the Arduino in order to read information
 fopen(a); % opens the serial port
 pause(1); % pause () for 1 second to make sure a connection is made
-out = instrfind ('Port', Port ) ; % see if the port you specified is open
-disp ('Serial Port is Open')
+out = instrfind('Port', Port); % see if the port you specified is open
+disp('Serial Port is Open')
 
 %% Ask user for number of seconds
 
@@ -24,11 +24,11 @@ end
 
 %% Read the potentiometer value
 serial_data = [];
-startTime = datetime ('now'); % saves the current time
+startTime = datetime('now'); % saves the current time
 time_interval = user_input % number of seconds to record data
 % run loop until seconds timer runs out
-while datetime ('now') < startTime + seconds(time_interval)
-    serial_read = fscanf (a ,'%f') % read the serial input as a float
+while datetime('now') < startTime + seconds(time_interval)
+    serial_read = fscanf(a ,'%f') % read the serial input as a float
     serial_data(end+1) = serial_read ; % save the serial input
     pause(.01) % wait 10 milliseconds before next serial reading
 end
