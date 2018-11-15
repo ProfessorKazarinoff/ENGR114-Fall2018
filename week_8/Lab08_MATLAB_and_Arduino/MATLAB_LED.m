@@ -1,21 +1,24 @@
-%% Blink Arudino LED on and off by typing L or H in command window
+%% Blink Arudino LED on and off by typing L or H in the command window
 % P. Kazarinoff, 2018
 
 %% Open the serial port
-Port = 'COM4'; % Port the Arduino is connected to
+Port = 'COM4';        % !!! port the Arduino is connected to !!!
 delete(instrfindall); % deletes any connected ports
-a = serial(Port); % connect to the Arduino in order to read information
-fopen(a); % opens the serial port
-pause(1); % pause () for 1 second to make sure a connection is made
-out = instrfind ('Port', Port ) ; % see if the port you specified is open
-disp ('Serial Port is Open')
+a = serial(Port);     % creates the serial port
+fopen(a);             % opens the serial port
+pause(1);             % pause () for 1 second to to ensure a connection
+out = instrfind ('Port', Port ) ; % see if the port we specified is open
+disp('Serial Port is Open')
 
 %% Send H and L over the serial line to blink the Arduino LED 10 times
 % for i =1:10
-% send_str = 'H';
-% fprintf(a, '%s', send_str); pause (1)
-% send_str = 'L';
-% fprintf(a, '%s', send_str); pause (1)
+%   send_str = 'H';
+%   fprintf(a, '%s', send_str);
+%   pause(1);
+% 
+%   send_str = 'L';
+%   fprintf(a, '%s', send_str);
+%   pause(1);
 % end
 
 %% Ask for user input, H for on, L for off, q for quit
