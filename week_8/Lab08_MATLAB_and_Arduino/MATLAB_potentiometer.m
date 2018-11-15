@@ -5,7 +5,7 @@
 clc, clear, close all;
 
 %% Open the serial port
-Port = 'COM4'; % Port the Arduino is connected to
+Port = 'COM5'; % Port the Arduino is connected to
 delete(instrfindall); % deletes any connected ports
 a = serial(Port); % connect to the Arduino in order to read information
 fopen(a); % opens the serial port
@@ -44,4 +44,5 @@ x = linspace(0,double(user_input),numel(serial_data));
 plot(x,serial_data)
 xlabel('Time (seconds)')
 ylabel('Potentiometer Reading (0-1024)')
+ylim([min(serial_data)-min(serial_data)*0.1, max(serial_data)+max(serial_data)*0.1])
 title('Potentiometer Reading vs. Time')
