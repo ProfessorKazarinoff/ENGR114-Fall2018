@@ -1,0 +1,34 @@
+# Exam 2 Review Topics
+
+Final Exam Review
+Covers Ch 1 - 10 + Any Misc Topics
+Exam Procedure/Format:
+Written portion (no computer use, no internet, close book & 1 page of notes): same as Exam 1
+Computer portion (no internet): use of MATLAB to create a .m file and/or a function.  Upload to D2L. Completed in class on PCC computers. No use of personal laptops.
+Can bring one page of notes (8.5'' x 11'') hand or computer printed front and back. Will be stapled and collected with your exam.
+Written portion:
+…all stuff from Exam 1, but will be more heavily weighted on the material in the 2nd half of the course.
+Syntax of declaring a function: function name, function input arguments and function output arguments.
+function command 1st line in m-file
+.m-file must have same name as function
+only one function per file
+will not cover sub-functions 
+fprintf with use of the f#.#% operator with its 2 args? min char length and precision
+disp() command
+logical operators & and |
+if, elseif, else, statements
+for loops, how its loop var increments each time, when loop stops.  Predict output of one with a few commands inside.
+while loops…. same things as with for loops
+if/break, breaks out of inner-most loop
+Vocab / Matching from the key terms at the end of each chapter
+Predict the output given code
+Write the code to produce an output
+Predict Errors given lines of code
+Computer portion:
+same stuff as exam 1, plus…
+draw a flow chart using the standard standard shapes (oval, parallelogram, rectangle, diamond).
+use of the input() function to collect user input
+use of creating a new function within a .m file and using it in that same .m file
+use of if, else, elseif , for loops, while loops
+disp() or fprintf() to display output to the command line.
+note: symbolic math, structure arrays and cell arrays will not be on the final exam
